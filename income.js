@@ -21,3 +21,22 @@ exports.addIncome = async(req,res) => {
         {
             res.status(500).json({message:error.message})
         }
+  
+ exports.getIncome = async (req, res) =>{
+    try {
+        const income= await incomeScema.find().sort({createdAt:-1})
+        res.status(200).json(income)
+    } catch(error){
+        res.status(500).json({message:error.message})
+    }
+}
+  
+ exports.DeleteIncome = async (req, res) =>{
+  const{id}=req.params
+  console.log(params.id)
+  incomeScema.findById(id).delete
+    try{((income) =>
+        res.status(200).json({message:'income deleted'}))
+} catch(error) =>
+    res.status(500).json({message:error.message})
+}
