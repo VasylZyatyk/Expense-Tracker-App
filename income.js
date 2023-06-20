@@ -1,4 +1,6 @@
 const incomeScema = require("../models/incomeModule")
+const { param } = require("../routes/transactions")
+
 
 
 exports.addIncome = async(req,res) => {
